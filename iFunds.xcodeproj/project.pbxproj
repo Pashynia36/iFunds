@@ -12,6 +12,7 @@
 		4E0ACFDF20A47D680010B197 /* iFunds.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E0ACFDD20A47D680010B197 /* iFunds.xcdatamodeld */; };
 		4E0ACFE120A47D6B0010B197 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E0ACFE020A47D6B0010B197 /* Assets.xcassets */; };
 		4E0ACFE420A47D6B0010B197 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E0ACFE220A47D6B0010B197 /* LaunchScreen.storyboard */; };
+		4E0ACFED20A47F520010B197 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0ACFEC20A47F520010B197 /* LoadingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		4E0ACFE020A47D6B0010B197 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E0ACFE320A47D6B0010B197 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E0ACFE520A47D6B0010B197 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E0ACFEC20A47F520010B197 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +57,8 @@
 			isa = PBXGroup;
 			children = (
 				4E0ACFD620A47D680010B197 /* AppDelegate.swift */,
-				4E0ACFDA20A47D680010B197 /* Main.storyboard */,
+				4E0ACFEF20A47F660010B197 /* Storyboard */,
+				4E0ACFEE20A47F5A0010B197 /* Controller */,
 				4E0ACFE520A47D6B0010B197 /* Info.plist */,
 				4E0ACFEB20A47DA20010B197 /* Supporting Files */,
 				4E0ACFDD20A47D680010B197 /* iFunds.xcdatamodeld */,
@@ -70,6 +73,22 @@
 				4E0ACFE220A47D6B0010B197 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4E0ACFEE20A47F5A0010B197 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4E0ACFEC20A47F520010B197 /* LoadingViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4E0ACFEF20A47F660010B197 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				4E0ACFDA20A47D680010B197 /* Main.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +164,7 @@
 			files = (
 				4E0ACFDF20A47D680010B197 /* iFunds.xcdatamodeld in Sources */,
 				4E0ACFD720A47D680010B197 /* AppDelegate.swift in Sources */,
+				4E0ACFED20A47F520010B197 /* LoadingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

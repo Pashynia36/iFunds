@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wla-6l-NgR">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Loading View Controller-->
+        <scene sceneID="1iw-OO-bTP">
+            <objects>
+                <viewController id="Wla-6l-NgR" customClass="LoadingViewController" customModule="iFunds" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EL5-Mh-kvj" customClass="I">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="iFunds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSK-ne-gAH">
+                                <rect key="frame" x="65" y="165" width="190" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="70"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XcQ-c6-xDb">
+                                <rect key="frame" x="52" y="270" width="216" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Count." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YL0-un-26h">
+                                        <rect key="frame" x="0.0" y="0.0" width="70.5" height="29"/>
+                                        <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Save." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTi-Co-Jga">
+                                        <rect key="frame" x="78.5" y="0.0" width="52" height="29"/>
+                                        <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Predict." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vx3-2e-6UR">
+                                        <rect key="frame" x="138.5" y="0.0" width="77.5" height="29"/>
+                                        <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="i20-a1-7J7"/>
+                    </view>
+                    <connections>
+                        <outlet property="countLabel" destination="YL0-un-26h" id="5df-DE-VHf"/>
+                        <outlet property="iFundsLabel" destination="DSK-ne-gAH" id="XuN-37-6C4"/>
+                        <outlet property="predictLabel" destination="Vx3-2e-6UR" id="UON-s5-Bx3"/>
+                        <outlet property="saveLabel" destination="hTi-Co-Jga" id="eTd-Dk-NlD"/>
+                        <segue destination="Kca-Ja-3ho" kind="showDetail" identifier="homeLoad" id="LiT-q5-221"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AZS-Y3-FeW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1488" y="-112"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RqR-b9-De7">
+            <objects>
+                <navigationController id="Kca-Ja-3ho" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xJF-Q1-bTK">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="TfI-xF-dmt" kind="relationship" relationship="rootViewController" id="71G-t9-WJn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vBk-Xe-Bf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-154" y="-118"/>
+        </scene>
+        <!--Graph-->
+        <scene sceneID="oGs-zM-mjL">
+            <objects>
+                <viewController id="IJv-sb-TEX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JPj-r9-fBz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="DhJ-2W-Y7E"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Graph" id="jWu-6f-yyA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d3e-nT-tcY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1931" y="-118"/>
+        </scene>
+        <!--Diagram-->
+        <scene sceneID="nD9-XS-OO0">
+            <objects>
+                <viewController id="2wp-H2-4Pv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kOF-Fw-s0d">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="WIZ-0s-Rxz"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Diagram" id="YIc-7a-J2J"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TMc-5F-wwt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1929" y="672"/>
+        </scene>
+        <!--Money-->
+        <scene sceneID="CGm-le-qia">
+            <objects>
+                <viewController id="XNH-Ws-v05" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YX9-88-SyM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="LNe-5N-aIq"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Money" id="VBq-V8-QpK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d5G-v9-RcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1933" y="-965"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="88w-rD-P2m">
+            <objects>
+                <tabBarController id="TfI-xF-dmt" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Drb-oX-rfu"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pkJ-5q-TVB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="XNH-Ws-v05" kind="relationship" relationship="viewControllers" id="ueV-p0-YiL"/>
+                        <segue destination="IJv-sb-TEX" kind="relationship" relationship="viewControllers" id="LdU-7z-Mge"/>
+                        <segue destination="2wp-H2-4Pv" kind="relationship" relationship="viewControllers" id="Ebg-XT-Q5c"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LYH-Yn-pEg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="994" y="-118"/>
+        </scene>
+    </scenes>
+</document>

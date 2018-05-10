@@ -15,7 +15,7 @@
         <scene sceneID="1iw-OO-bTP">
             <objects>
                 <viewController id="Wla-6l-NgR" customClass="LoadingViewController" customModule="iFunds" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="EL5-Mh-kvj" customClass="I">
+                    <view key="view" contentMode="scaleToFill" id="EL5-Mh-kvj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -26,23 +26,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XcQ-c6-xDb">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XcQ-c6-xDb">
                                 <rect key="frame" x="52" y="270" width="216" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Count." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YL0-un-26h">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YL0-un-26h">
                                         <rect key="frame" x="0.0" y="0.0" width="70.5" height="29"/>
                                         <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Save." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTi-Co-Jga">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTi-Co-Jga">
                                         <rect key="frame" x="78.5" y="0.0" width="52" height="29"/>
                                         <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Predict." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vx3-2e-6UR">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Predict." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vx3-2e-6UR">
                                         <rect key="frame" x="138.5" y="0.0" width="77.5" height="29"/>
                                         <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="25"/>
                                         <nil key="textColor"/>
@@ -52,6 +51,10 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XcQ-c6-xDb" firstAttribute="centerX" secondItem="EL5-Mh-kvj" secondAttribute="centerX" id="VOG-Ti-gLl"/>
+                            <constraint firstItem="XcQ-c6-xDb" firstAttribute="centerY" secondItem="EL5-Mh-kvj" secondAttribute="centerY" id="bqo-ig-GT6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="i20-a1-7J7"/>
                     </view>
                     <connections>
@@ -134,7 +137,10 @@
         <scene sceneID="88w-rD-P2m">
             <objects>
                 <tabBarController id="TfI-xF-dmt" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Drb-oX-rfu"/>
+                    <navigationItem key="navigationItem" id="Drb-oX-rfu">
+                        <barButtonItem key="leftBarButtonItem" systemItem="organize" id="AFt-0I-eVi"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1R9-Sb-nWx"/>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pkJ-5q-TVB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

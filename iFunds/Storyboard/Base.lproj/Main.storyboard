@@ -88,7 +88,7 @@
         <!--Graph-->
         <scene sceneID="oGs-zM-mjL">
             <objects>
-                <viewController id="IJv-sb-TEX" sceneMemberID="viewController">
+                <viewController id="IJv-sb-TEX" customClass="GraphViewController" customModule="iFunds" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JPj-r9-fBz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -104,7 +104,7 @@
         <!--Diagram-->
         <scene sceneID="nD9-XS-OO0">
             <objects>
-                <viewController id="2wp-H2-4Pv" sceneMemberID="viewController">
+                <viewController id="2wp-H2-4Pv" customClass="DiagramViewController" customModule="iFunds" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kOF-Fw-s0d">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,10 +117,25 @@
             </objects>
             <point key="canvasLocation" x="1929" y="672"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="tEn-G2-nkQ">
+            <objects>
+                <viewController id="vbI-Wp-FvJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CFe-KQ-DeM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="vJq-hu-mWI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P2Z-oN-Iom" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1014" y="-963"/>
+        </scene>
         <!--Money-->
         <scene sceneID="CGm-le-qia">
             <objects>
-                <viewController id="XNH-Ws-v05" sceneMemberID="viewController">
+                <viewController id="XNH-Ws-v05" customClass="MoneyViewController" customModule="iFunds" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YX9-88-SyM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -139,7 +154,11 @@
                 <tabBarController id="TfI-xF-dmt" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Drb-oX-rfu">
                         <barButtonItem key="leftBarButtonItem" systemItem="organize" id="AFt-0I-eVi"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1R9-Sb-nWx"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1R9-Sb-nWx">
+                            <connections>
+                                <segue destination="vbI-Wp-FvJ" kind="show" id="7vt-MC-4kW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pkJ-5q-TVB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>

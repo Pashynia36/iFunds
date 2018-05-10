@@ -1,0 +1,17 @@
+//
+//  GraphViewController.swift
+//  iFunds
+//
+//  Created by Pavlo Novak on 5/10/18.
+//  Copyright © 2018 Pavlo Novak. All rights reserved.
+//
+
+import UIKit
+
+class GraphViewController: UIViewController {
+
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+    }
+}

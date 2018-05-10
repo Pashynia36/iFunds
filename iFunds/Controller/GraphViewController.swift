@@ -9,9 +9,20 @@
 import UIKit
 
 class GraphViewController: UIViewController {
-
+    
+    @IBOutlet weak var containerConstant: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
+    }
+    
+    @IBAction func showMenu(_ sender: UIBarButtonItem) {
+        
+        if containerConstant.constant == 0 {
+            containerConstant.constant -= 200
+        } else {
+            containerConstant.constant = 0
+        }
     }
 }

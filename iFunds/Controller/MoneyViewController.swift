@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Photos
+import CoreData
 
 class MoneyViewController: UIViewController {
     

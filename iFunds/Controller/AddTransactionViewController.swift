@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreData
+import Photos
 
 class AddTransactionViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -15,22 +17,44 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
     @IBOutlet weak var descriptionField: UITextField!
     @IBOutlet weak var amountField: UITextField!
     
+    var photo: String?
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        _ = PHAsset.fetchAssets(with: nil)
+    }
+    
+    func save(isIncome: Bool, purpose: String, description: String, amount: Float, photo: String) {
+        
+        let date = Date()
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        // Taking managedContext
+        let managedContext = appDelegate.persistentContainer.viewContext
+        // Creating new managed Object
+        let entity = NSEntityDescription.entity(forEntityName: "Transaction", in: managedContext)!
+        let object = NSManagedObject(entity: entity, insertInto: managedContext)
+        // Setting new value to managedObject via KVC
+        object.setValue(isIncome, forKey: "isIncome")
+        object.setValue(purpose, forKey: "purpose")
+        object.setValue(description, forKey: "descr")
+        object.setValue(amount, forKey: "amount")
+        object.setValue(photo, forKey: "photo")
+        object.setValue(date, forKey: "date")
+        // Commit changes in the managedContext
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Couldn't save. \(error), \(error.userInfo)")
+        }
     }
     
     // Did finish picking
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
-        //let chosenAsset = info[UIImagePickerControllerPHAsset]!
-        // let image = info[UIImagePickerControllerPHAsset]
-        
-        DispatchQueue.main.async {
-            // let date = Date()
-            //self.save(name: (image as! PHAsset).localIdentifier, date: date)
-        }
-        
+        // Taking chosen PHAsset
+        let image = info[UIImagePickerControllerPHAsset]
+        photo = (image as! PHAsset).localIdentifier
         picker.dismiss(animated: true, completion: nil)
     }
     
@@ -40,7 +64,7 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
         picker.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func photoButton(_ sender: UIButton) {
+    @IBAction func photoButton(_ sender: Any) {
         
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
@@ -58,6 +82,9 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
     @IBAction func submitButton(_ sender: UIButton) {
         
         // TODO: - Core data save
-        navigationController?.popViewController(animated: true)
+        if (purposeField.text?.count)! > 2 && !(amountField.text?.isEmpty)! {
+            save(isIncome: (segmentControl.selectedSegmentIndex == 0), purpose: purposeField.text!, description: descriptionField.text!, amount: Float(amountField.text!)!, photo: photo!)
+            navigationController?.popViewController(animated: true)
+        }
     }
 }

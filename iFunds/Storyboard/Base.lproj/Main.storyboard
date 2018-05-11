@@ -223,6 +223,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="XNH-Ws-v05" id="AzZ-XQ-9Df"/>
+                                    <outlet property="delegate" destination="XNH-Ws-v05" id="Oko-zd-8tJ"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -251,6 +255,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="containerConstant" destination="ygm-kH-OeG" id="3RM-BR-S3D"/>
+                        <outlet property="tableView" destination="gkM-hV-mNS" id="TSv-C0-P9E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d5G-v9-RcI" userLabel="First Responder" sceneMemberID="firstResponder"/>

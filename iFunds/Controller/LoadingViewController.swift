@@ -29,28 +29,25 @@ class LoadingViewController: UIViewController {
         super.viewDidAppear(animated)
         UIView.animate(withDuration: 2.5, delay: 0.0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.1, options: [.curveEaseOut], animations: {
             self.iFundsLabel.center.y -= self.view.bounds.height
-        }) { (finished) in
+        })
+        UIView.animate(withDuration: 1.5, animations: {
+            self.countLabel.alpha = 1.0
+        }, completion: { (finished) in
             if finished {
                 UIView.animate(withDuration: 1.5, animations: {
-                    self.countLabel.alpha = 1.0
+                    self.saveLabel.alpha = 1.0
                 }, completion: { (finished) in
                     if finished {
                         UIView.animate(withDuration: 1.5, animations: {
-                            self.saveLabel.alpha = 1.0
+                            self.predictLabel.alpha = 1.0
                         }, completion: { (finished) in
                             if finished {
-                                UIView.animate(withDuration: 1.5, animations: {
-                                    self.predictLabel.alpha = 1.0
-                                }, completion: { (finished) in
-                                    if finished {
-                                        self.performSegue(withIdentifier: "homeLoad", sender: self)
-                                    }
-                                })
+                                self.performSegue(withIdentifier: "homeLoad", sender: self)
                             }
                         })
                     }
                 })
             }
-        }
+        })
     }
 }

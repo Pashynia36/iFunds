@@ -10,13 +10,13 @@ import UIKit
 
 class ContainerViewController: UIViewController {
 
-    override func viewDidLoad() {
+    override func viewWillAppear(_ animated: Bool) {
         
-        super.viewDidLoad()
+        super.viewWillAppear(animated)
     }
     
     @IBAction func homePage(_ sender: UIButton) {
-        
+
         tabBarController?.selectedIndex = 0
     }
 }

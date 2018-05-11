@@ -175,7 +175,7 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="69" id="Gcz-vD-gIn" customClass="TransactionsTableViewCell" customModule="iFunds" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="transactionCell" rowHeight="69" id="Gcz-vD-gIn" customClass="TransactionsTableViewCell" customModule="iFunds" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gcz-vD-gIn" id="8AL-Ww-sKY">
@@ -243,7 +243,11 @@
                                 <action selector="showMenu:" destination="XNH-Ws-v05" id="mUA-wU-75I"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="okF-Ef-J6W"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="okF-Ef-J6W">
+                            <connections>
+                                <segue destination="RIs-Px-Tc1" kind="show" id="3Fc-kQ-5BF"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="containerConstant" destination="ygm-kH-OeG" id="3RM-BR-S3D"/>
@@ -252,6 +256,109 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d5G-v9-RcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2928.75" y="-965.49295774647885"/>
+        </scene>
+        <!--Add Transaction View Controller-->
+        <scene sceneID="Kgi-nU-zca">
+            <objects>
+                <viewController id="RIs-Px-Tc1" customClass="AddTransactionViewController" customModule="iFunds" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pbZ-Z5-FNE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IEn-i7-ltv">
+                                <rect key="frame" x="100" y="80" width="121" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="121" id="lKf-28-g64"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="+"/>
+                                    <segment title="-"/>
+                                </segments>
+                                <color key="tintColor" red="0.24890440183865761" green="0.88574714467005078" blue="0.2341924803852618" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Purpose" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uib-0V-F9L">
+                                <rect key="frame" x="60" y="188" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="QbQ-Jj-nV2"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6tH-6V-gha">
+                                <rect key="frame" x="60" y="269" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="MmT-at-9as"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fp4-KS-f6n">
+                                <rect key="frame" x="110" y="379" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Hcp-2t-UVw"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KPz-IA-gCj">
+                                <rect key="frame" x="244" y="409" width="60" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="OzM-fX-iTi"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Qdo-Bc-ZrI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="25"/>
+                                <state key="normal" title="Photo">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="photoButton:" destination="RIs-Px-Tc1" eventType="touchUpInside" id="Nko-bG-oKy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qa5-90-7G8">
+                                <rect key="frame" x="123" y="462" width="74" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="74" id="f8X-bD-Gd0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="25"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitButton:" destination="RIs-Px-Tc1" eventType="touchUpInside" id="cXi-3n-Vup"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6tH-6V-gha" firstAttribute="centerY" secondItem="pbZ-Z5-FNE" secondAttribute="centerY" id="0bn-ka-Wsp"/>
+                            <constraint firstItem="uxF-sQ-0bH" firstAttribute="bottom" secondItem="KPz-IA-gCj" secondAttribute="bottom" constant="70" id="2R1-Qc-yCs"/>
+                            <constraint firstItem="uxF-sQ-0bH" firstAttribute="bottom" secondItem="qa5-90-7G8" secondAttribute="bottom" constant="16" id="5Dc-rt-BpR"/>
+                            <constraint firstItem="IEn-i7-ltv" firstAttribute="top" secondItem="uxF-sQ-0bH" secondAttribute="top" constant="16" id="NaF-5Y-t4b"/>
+                            <constraint firstItem="IEn-i7-ltv" firstAttribute="centerX" secondItem="pbZ-Z5-FNE" secondAttribute="centerX" id="O3N-A1-QAQ"/>
+                            <constraint firstItem="uxF-sQ-0bH" firstAttribute="trailing" secondItem="KPz-IA-gCj" secondAttribute="trailing" constant="16" id="VpE-sa-cOG"/>
+                            <constraint firstItem="uib-0V-F9L" firstAttribute="centerX" secondItem="pbZ-Z5-FNE" secondAttribute="centerX" id="c4Q-yg-ogL"/>
+                            <constraint firstItem="fp4-KS-f6n" firstAttribute="centerX" secondItem="pbZ-Z5-FNE" secondAttribute="centerX" id="fHN-3V-RLu"/>
+                            <constraint firstItem="uib-0V-F9L" firstAttribute="top" secondItem="IEn-i7-ltv" secondAttribute="bottom" constant="80" id="lVe-ia-NvS"/>
+                            <constraint firstItem="qa5-90-7G8" firstAttribute="centerX" secondItem="pbZ-Z5-FNE" secondAttribute="centerX" id="mbX-7v-Skl"/>
+                            <constraint firstItem="KPz-IA-gCj" firstAttribute="leading" secondItem="uxF-sQ-0bH" secondAttribute="leading" constant="244" id="nom-Yp-gCT"/>
+                            <constraint firstItem="fp4-KS-f6n" firstAttribute="top" secondItem="6tH-6V-gha" secondAttribute="bottom" constant="80" id="vgF-He-Jws"/>
+                            <constraint firstItem="6tH-6V-gha" firstAttribute="centerX" secondItem="pbZ-Z5-FNE" secondAttribute="centerX" id="vnk-QC-1oY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uxF-sQ-0bH"/>
+                    </view>
+                    <connections>
+                        <outlet property="amountField" destination="fp4-KS-f6n" id="ajk-aR-7gC"/>
+                        <outlet property="descriptionField" destination="6tH-6V-gha" id="rPS-Nc-7Sz"/>
+                        <outlet property="purposeField" destination="uib-0V-F9L" id="0MM-t4-b4u"/>
+                        <outlet property="segmentControl" destination="IEn-i7-ltv" id="UyM-ve-N8c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B5z-FL-Y2i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3943.125" y="-959.15492957746483"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="88w-rD-P2m">

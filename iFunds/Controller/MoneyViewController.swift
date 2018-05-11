@@ -64,4 +64,17 @@ extension MoneyViewController: UITableViewDataSource {
         cell.prepareCellFor(transaction: transactions[indexPath.row])
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            let transaction = transactions[indexPath.row]
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+            let managedContext = appDelegate.persistentContainer.viewContext
+            managedContext.delete(transaction)
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            getTransactions()
+        }
+        tableView.reloadData()
+    }
 }

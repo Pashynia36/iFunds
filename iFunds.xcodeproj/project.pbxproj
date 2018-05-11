@@ -19,6 +19,7 @@
 		4E0ACFF920A4869F0010B197 /* AddTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0ACFF820A4869F0010B197 /* AddTransactionViewController.swift */; };
 		4E0ACFFB20A48EAD0010B197 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0ACFFA20A48EAD0010B197 /* ContainerViewController.swift */; };
 		4E0ACFFD20A490B60010B197 /* TransactionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0ACFFC20A490B60010B197 /* TransactionsTableViewCell.swift */; };
+		4ECA773B20A5D45000F19DC7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECA773A20A5D45000F19DC7 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		4E0ACFF820A4869F0010B197 /* AddTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewController.swift; sourceTree = "<group>"; };
 		4E0ACFFA20A48EAD0010B197 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		4E0ACFFC20A490B60010B197 /* TransactionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransactionsTableViewCell.swift; path = iFunds/TransactionsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		4ECA773A20A5D45000F19DC7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				4E0ACFF820A4869F0010B197 /* AddTransactionViewController.swift */,
 				4E0ACFFA20A48EAD0010B197 /* ContainerViewController.swift */,
 				4E0ACFFC20A490B60010B197 /* TransactionsTableViewCell.swift */,
+				4ECA773A20A5D45000F19DC7 /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			files = (
 				4E0ACFFD20A490B60010B197 /* TransactionsTableViewCell.swift in Sources */,
 				4E0ACFDF20A47D680010B197 /* iFunds.xcdatamodeld in Sources */,
+				4ECA773B20A5D45000F19DC7 /* ProfileViewController.swift in Sources */,
 				4E0ACFF520A486500010B197 /* GraphViewController.swift in Sources */,
 				4E0ACFFB20A48EAD0010B197 /* ContainerViewController.swift in Sources */,
 				4E0ACFF720A4865D0010B197 /* DiagramViewController.swift in Sources */,

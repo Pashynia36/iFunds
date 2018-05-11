@@ -405,6 +405,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="105" height="41"/>
                                         <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="25"/>
                                         <state key="normal" title="My profile"/>
+                                        <connections>
+                                            <segue destination="HAF-Im-Vcw" kind="show" id="5gd-Fg-zGF"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Cr-gi-57W">
                                         <rect key="frame" x="20.5" y="71" width="64" height="41"/>
@@ -444,6 +447,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Udq-gq-JC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3953" y="-89"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="gfK-3B-zJi">
+            <objects>
+                <viewController id="HAF-Im-Vcw" customClass="ProfileViewController" customModule="iFunds" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7DR-xm-tCh">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="6zf-QJ-Js6">
+                                <rect key="frame" x="5" y="184" width="190" height="87"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total spent:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Bp-XI-tSc">
+                                        <rect key="frame" x="0.0" y="0.0" width="118" height="29"/>
+                                        <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total earned:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPf-zS-jpb">
+                                        <rect key="frame" x="0.0" y="29" width="135" height="29"/>
+                                        <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clear profit:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Brf-sU-dPn">
+                                        <rect key="frame" x="0.0" y="58" width="122.5" height="29"/>
+                                        <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MIk-ob-Sgj" firstAttribute="trailing" secondItem="6zf-QJ-Js6" secondAttribute="trailing" constant="5" id="2BU-NZ-kUo"/>
+                            <constraint firstItem="6zf-QJ-Js6" firstAttribute="centerX" secondItem="7DR-xm-tCh" secondAttribute="centerX" id="AR3-WJ-eJi"/>
+                            <constraint firstItem="6zf-QJ-Js6" firstAttribute="leading" secondItem="MIk-ob-Sgj" secondAttribute="leading" constant="5" id="de7-xd-pmk"/>
+                            <constraint firstItem="6zf-QJ-Js6" firstAttribute="centerY" secondItem="7DR-xm-tCh" secondAttribute="centerY" id="okO-w7-zw8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MIk-ob-Sgj"/>
+                    </view>
+                    <connections>
+                        <outlet property="clearProfit" destination="Brf-sU-dPn" id="R9G-tP-eBF"/>
+                        <outlet property="totalEarned" destination="rPf-zS-jpb" id="oOX-7u-ydz"/>
+                        <outlet property="totalSpent" destination="5Bp-XI-tSc" id="pvD-FF-BTo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aWR-Go-W1w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4710" y="-89"/>
         </scene>
         <!--Money-->
         <scene sceneID="XP6-jG-EOp">

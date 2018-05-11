@@ -3,9 +3,9 @@
     <entity name="Transaction" representedClassName="Transaction" syncable="YES" codeGenerationType="class">
         <attribute name="amount" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="descr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descr" attributeType="String" syncable="YES"/>
         <attribute name="isIncome" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="photo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo" attributeType="String" syncable="YES"/>
         <attribute name="purpose" attributeType="String" syncable="YES"/>
     </entity>
     <elements>

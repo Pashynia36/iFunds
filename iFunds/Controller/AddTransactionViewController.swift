@@ -17,7 +17,7 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
     @IBOutlet weak var descriptionField: UITextField!
     @IBOutlet weak var amountField: UITextField!
     
-    var photo: String?
+    var photo: String = ""
     
     override func viewDidLoad() {
         
@@ -83,7 +83,11 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
         
         // TODO: - Core data save
         if (purposeField.text?.count)! > 2 && !(amountField.text?.isEmpty)! {
-            save(isIncome: (segmentControl.selectedSegmentIndex == 0), purpose: purposeField.text!, description: descriptionField.text!, amount: Float(amountField.text!)!, photo: photo!)
+            let isIncome = (segmentControl.selectedSegmentIndex == 0)
+            let purpose = purposeField.text!
+            let description = descriptionField.text ?? ""
+            let amount = Float(amountField.text!)!
+            save(isIncome: isIncome, purpose: purpose, description: description, amount: amount, photo: photo)
             navigationController?.popViewController(animated: true)
         }
     }

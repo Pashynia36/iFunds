@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -67,7 +68,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AZS-Y3-FeW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1488" y="-112"/>
+            <point key="canvasLocation" x="-379" y="-118"/>
         </scene>
         <!--Graph View Controller-->
         <scene sceneID="oGs-zM-mjL">
@@ -182,28 +183,21 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="68.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Tv-C5-J7U">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Tv-C5-J7U">
                                                     <rect key="frame" x="5" y="5" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="3ry-cN-pkA"/>
                                                         <constraint firstAttribute="height" constant="50" id="Biy-tz-7qX"/>
                                                     </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="25"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Purpose" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5s1-EG-Wjo">
-                                                    <rect key="frame" x="63" y="11" width="72" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purpose" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5s1-EG-Wjo">
+                                                    <rect key="frame" x="63" y="11" width="226" height="15.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDF-Xa-Fqj">
-                                                    <rect key="frame" x="63" y="34" width="69" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDF-Xa-Fqj">
+                                                    <rect key="frame" x="63" y="34" width="226" height="15.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -211,9 +205,17 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="7Tv-C5-J7U" firstAttribute="centerY" secondItem="8AL-Ww-sKY" secondAttribute="centerY" id="BTR-hY-YVK"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="5s1-EG-Wjo" secondAttribute="bottom" constant="23" id="COX-JI-4OB"/>
                                                 <constraint firstItem="7Tv-C5-J7U" firstAttribute="top" secondItem="8AL-Ww-sKY" secondAttribute="top" constant="5" id="ChB-ck-dsu"/>
+                                                <constraint firstItem="yDF-Xa-Fqj" firstAttribute="bottom" secondItem="8AL-Ww-sKY" secondAttribute="bottomMargin" id="HCr-kp-ymy"/>
+                                                <constraint firstItem="yDF-Xa-Fqj" firstAttribute="leading" secondItem="7Tv-C5-J7U" secondAttribute="trailing" constant="8" id="Ifc-jY-CAo"/>
                                                 <constraint firstAttribute="bottom" secondItem="7Tv-C5-J7U" secondAttribute="bottom" constant="5" id="MlC-Sg-Nku"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="yDF-Xa-Fqj" secondAttribute="trailing" constant="16" id="RCQ-0V-iky"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="5s1-EG-Wjo" secondAttribute="trailing" constant="16" id="Rbo-BG-zbM"/>
+                                                <constraint firstItem="yDF-Xa-Fqj" firstAttribute="top" secondItem="8AL-Ww-sKY" secondAttribute="topMargin" constant="23" id="Yym-V2-cYs"/>
                                                 <constraint firstItem="7Tv-C5-J7U" firstAttribute="leading" secondItem="8AL-Ww-sKY" secondAttribute="leading" constant="5" id="Zks-fN-WJp"/>
+                                                <constraint firstItem="5s1-EG-Wjo" firstAttribute="top" secondItem="8AL-Ww-sKY" secondAttribute="topMargin" id="b8w-Ty-35v"/>
+                                                <constraint firstItem="5s1-EG-Wjo" firstAttribute="leading" secondItem="7Tv-C5-J7U" secondAttribute="trailing" constant="8" id="eKm-CB-a02"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -363,7 +365,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B5z-FL-Y2i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3943.125" y="-959.15492957746483"/>
+            <point key="canvasLocation" x="3953" y="-965"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="88w-rD-P2m">
@@ -386,7 +388,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LYH-Yn-pEg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="216" y="-118"/>
+            <point key="canvasLocation" x="666" y="-118"/>
         </scene>
         <!--Container View Controller-->
         <scene sceneID="aRg-x9-CDw">
@@ -441,7 +443,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Udq-gq-JC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3953" y="-53"/>
+            <point key="canvasLocation" x="3953" y="-89"/>
         </scene>
         <!--Money-->
         <scene sceneID="XP6-jG-EOp">

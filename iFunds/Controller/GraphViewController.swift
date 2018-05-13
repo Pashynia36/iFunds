@@ -17,6 +17,14 @@ class GraphViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        super.viewWillDisappear(animated)
+        if containerConstant.constant == 0 {
+            containerConstant.constant -= 200
+        }
+    }
+    
     @IBAction func showMenu(_ sender: UIBarButtonItem) {
         
         if containerConstant.constant == 0 {

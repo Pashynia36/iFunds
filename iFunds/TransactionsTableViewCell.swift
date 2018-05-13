@@ -30,8 +30,10 @@ class TransactionsTableViewCell: UITableViewCell {
                     self.imageInTheCell.image = image
             }
         } else if transaction.isIncome {
+            imageInTheCell.image = nil
             imageInTheCell.backgroundColor = UIColor.green
         } else {
+            imageInTheCell.image = nil
             imageInTheCell.backgroundColor = UIColor.red
         }
         imageInTheCell.layer.cornerRadius = 25.0

@@ -19,6 +19,7 @@
 		4E0ACFF920A4869F0010B197 /* AddTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0ACFF820A4869F0010B197 /* AddTransactionViewController.swift */; };
 		4E0ACFFB20A48EAD0010B197 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0ACFFA20A48EAD0010B197 /* ContainerViewController.swift */; };
 		4E0ACFFD20A490B60010B197 /* TransactionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0ACFFC20A490B60010B197 /* TransactionsTableViewCell.swift */; };
+		4E0C137620A97C2A00495AA7 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C137520A97C2A00495AA7 /* GraphView.swift */; };
 		4ECA773B20A5D45000F19DC7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECA773A20A5D45000F19DC7 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		4E0ACFF820A4869F0010B197 /* AddTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewController.swift; sourceTree = "<group>"; };
 		4E0ACFFA20A48EAD0010B197 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		4E0ACFFC20A490B60010B197 /* TransactionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransactionsTableViewCell.swift; path = iFunds/TransactionsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		4E0C137520A97C2A00495AA7 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		4ECA773A20A5D45000F19DC7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				4E0ACFD620A47D680010B197 /* AppDelegate.swift */,
+				4E0C137420A97BE800495AA7 /* View */,
 				4E0ACFEF20A47F660010B197 /* Storyboard */,
 				4E0ACFEE20A47F5A0010B197 /* Controller */,
 				4E0ACFE520A47D6B0010B197 /* Info.plist */,
@@ -110,6 +113,14 @@
 				4E0ACFDA20A47D680010B197 /* Main.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		4E0C137420A97BE800495AA7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4E0C137520A97C2A00495AA7 /* GraphView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +197,7 @@
 				4E0ACFFD20A490B60010B197 /* TransactionsTableViewCell.swift in Sources */,
 				4E0ACFDF20A47D680010B197 /* iFunds.xcdatamodeld in Sources */,
 				4ECA773B20A5D45000F19DC7 /* ProfileViewController.swift in Sources */,
+				4E0C137620A97C2A00495AA7 /* GraphView.swift in Sources */,
 				4E0ACFF520A486500010B197 /* GraphViewController.swift in Sources */,
 				4E0ACFFB20A48EAD0010B197 /* ContainerViewController.swift in Sources */,
 				4E0ACFF720A4865D0010B197 /* DiagramViewController.swift in Sources */,

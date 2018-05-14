@@ -88,12 +88,22 @@
                                     <segue destination="Fme-v6-obX" kind="embed" id="OHo-na-c3X"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3dM-U7-v9D" customClass="GraphView" customModule="iFunds" customModuleProvider="target">
+                                <rect key="frame" x="35" y="159" width="250" height="250"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="9Hv-nW-laQ"/>
+                                    <constraint firstAttribute="height" constant="250" id="EqM-xx-DLV"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="3dM-U7-v9D" firstAttribute="centerX" secondItem="JPj-r9-fBz" secondAttribute="centerX" id="9fT-uo-frO"/>
                             <constraint firstItem="iIl-iP-D5F" firstAttribute="top" secondItem="DhJ-2W-Y7E" secondAttribute="top" id="U9b-Nc-FJJ"/>
                             <constraint firstItem="iIl-iP-D5F" firstAttribute="leading" secondItem="DhJ-2W-Y7E" secondAttribute="leading" constant="-200" id="af1-Gl-7Wf"/>
                             <constraint firstItem="iIl-iP-D5F" firstAttribute="bottom" secondItem="DhJ-2W-Y7E" secondAttribute="bottom" id="qd1-Ua-zqq"/>
+                            <constraint firstItem="3dM-U7-v9D" firstAttribute="centerY" secondItem="JPj-r9-fBz" secondAttribute="centerY" id="zaf-H6-eSy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DhJ-2W-Y7E"/>
                     </view>
@@ -106,6 +116,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="containerConstant" destination="af1-Gl-7Wf" id="qne-82-bc0"/>
+                        <outlet property="graphView" destination="3dM-U7-v9D" id="qmW-pU-U4F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d3e-nT-tcY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -558,6 +569,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="e7w-1Z-4Fy"/>
+        <segue reference="OHo-na-c3X"/>
     </inferredMetricsTieBreakers>
 </document>

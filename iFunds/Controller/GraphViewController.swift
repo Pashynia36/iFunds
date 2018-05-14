@@ -14,10 +14,19 @@ class GraphViewController: UIViewController {
     
     @IBOutlet weak var graphView: GraphView!
     
+    var transactions: [Transaction] = []
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        // TODO:- Implement transfer from CoreData to graphView.graphPoints(last 7 values)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        getTransactions()
+        fillTransactions()
+        graphView.setNeedsDisplay()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -25,6 +34,30 @@ class GraphViewController: UIViewController {
         super.viewWillDisappear(animated)
         if containerConstant.constant == 0 {
             containerConstant.constant -= 200
+        }
+    }
+
+    func getTransactions() {
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        do {
+            transactions = try managedContext.fetch(Transaction.fetchRequest())
+        } catch {
+            print("Fetching Failed")
+        }
+    }
+    
+    func fillTransactions() {
+        
+        for i in 0..<transactions.count {
+            
+            if transactions[i].isIncome {
+                graphView.graphPoints.append(Int(transactions[i].amount))
+            } else {
+                graphView.graphPoints.append(Int(-transactions[i].amount))
+            }
+            graphView.graphPoints.remove(at: 0)
         }
     }
     

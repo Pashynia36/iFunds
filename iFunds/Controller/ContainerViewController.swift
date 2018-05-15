@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ContainerViewController: UIViewController {
+final class ContainerViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         

@@ -10,12 +10,12 @@ import UIKit
 import Photos
 import CoreData
 
-class MoneyViewController: UIViewController {
+final class MoneyViewController: UIViewController {
     
-    @IBOutlet weak var containerConstant: NSLayoutConstraint!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var containerConstant: NSLayoutConstraint!
+    @IBOutlet private weak var tableView: UITableView!
     
-    var transactions: [Transaction] = []
+    private var transactions: [Transaction] = []
     
     override func viewWillAppear(_ animated: Bool) {
         

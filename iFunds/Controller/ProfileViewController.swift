@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+final class ProfileViewController: UIViewController {
 
     @IBOutlet weak var totalSpent: UILabel!
     @IBOutlet weak var totalEarned: UILabel!
     @IBOutlet weak var clearProfit: UILabel!
     
-    var transactions: [Transaction] = []
+    private var transactions: [Transaction] = []
     
     override func viewWillAppear(_ animated: Bool) {
         

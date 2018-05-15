@@ -10,11 +10,11 @@ import UIKit
 import CoreData
 import Photos
 
-class TransactionsTableViewCell: UITableViewCell {
+final class TransactionsTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var imageInTheCell: UIImageView!
-    @IBOutlet weak var purposeInTheCell: UILabel!
-    @IBOutlet weak var amountInTheCell: UILabel!
+    @IBOutlet private weak var imageInTheCell: UIImageView!
+    @IBOutlet private weak var purposeInTheCell: UILabel!
+    @IBOutlet private weak var amountInTheCell: UILabel!
     
     func prepareCellFor(transaction: Transaction) {
         

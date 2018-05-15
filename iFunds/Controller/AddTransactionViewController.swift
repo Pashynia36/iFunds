@@ -10,14 +10,14 @@ import UIKit
 import CoreData
 import Photos
 
-class AddTransactionViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+final class AddTransactionViewController: UIViewController {
     
-    @IBOutlet weak var segmentControl: UISegmentedControl!
-    @IBOutlet weak var purposeField: UITextField!
-    @IBOutlet weak var descriptionField: UITextField!
-    @IBOutlet weak var amountField: UITextField!
+    @IBOutlet private weak var segmentControl: UISegmentedControl!
+    @IBOutlet private weak var purposeField: UITextField!
+    @IBOutlet private weak var descriptionField: UITextField!
+    @IBOutlet private weak var amountField: UITextField!
     
-    var photo: String = ""
+    private var photo: String = ""
     
     override func viewDidLoad() {
         
@@ -49,21 +49,6 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
         }
     }
     
-    // Did finish picking
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-        // Taking chosen PHAsset
-        let image = info[UIImagePickerControllerPHAsset]
-        photo = (image as! PHAsset).localIdentifier
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-    // Did cancel
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
     @IBAction func photoButton(_ sender: Any) {
         
         let imagePickerController = UIImagePickerController()
@@ -90,5 +75,23 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
             save(isIncome: isIncome, purpose: purpose, description: description, amount: amount, photo: photo)
             navigationController?.popViewController(animated: true)
         }
+    }
+}
+
+extension AddTransactionViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
+    
+    // Did finish picking
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        // Taking chosen PHAsset
+        let image = info[UIImagePickerControllerPHAsset]
+        photo = (image as! PHAsset).localIdentifier
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    // Did cancel
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
+        picker.dismiss(animated: true, completion: nil)
     }
 }

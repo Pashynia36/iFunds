@@ -10,7 +10,7 @@ import UIKit
 
 import UIKit
 
-class BarCell: UICollectionViewCell {
+final class BarCell: UICollectionViewCell {
     
     let barView: UIView = {
         let view = UIView()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GraphView: UIView {
+final class GraphView: UIView {
     
     private struct Constants {
         

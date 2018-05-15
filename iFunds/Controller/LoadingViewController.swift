@@ -8,12 +8,12 @@
 
 import UIKit
 
-class LoadingViewController: UIViewController {
+final class LoadingViewController: UIViewController {
 
-    @IBOutlet weak var iFundsLabel: UILabel!
-    @IBOutlet weak var countLabel: UILabel!
-    @IBOutlet weak var saveLabel: UILabel!
-    @IBOutlet weak var predictLabel: UILabel!
+    @IBOutlet private weak var iFundsLabel: UILabel!
+    @IBOutlet private weak var countLabel: UILabel!
+    @IBOutlet private weak var saveLabel: UILabel!
+    @IBOutlet private weak var predictLabel: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
         

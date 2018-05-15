@@ -8,13 +8,13 @@
 
 import UIKit
 
-class GraphViewController: UIViewController {
+final class GraphViewController: UIViewController {
     
-    @IBOutlet weak var containerConstant: NSLayoutConstraint!
+    @IBOutlet private weak var containerConstant: NSLayoutConstraint!
     
-    @IBOutlet weak var graphView: GraphView!
+    @IBOutlet private weak var graphView: GraphView!
     
-    var transactions: [Transaction] = []
+    private var transactions: [Transaction] = []
     
     override func viewDidLoad() {
         

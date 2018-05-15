@@ -8,13 +8,13 @@
 
 import UIKit
 
-class DiagramViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+final class DiagramViewController: UIViewController {
 
-    @IBOutlet weak var containerConstant: NSLayoutConstraint!
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var containerConstant: NSLayoutConstraint!
+    @IBOutlet private weak var collectionView: UICollectionView!
     
-    var transactions: [Transaction] = []
-    var incomeValues: [Float] = []
+    private var transactions: [Transaction] = []
+    private var incomeValues: [Float] = []
     
     override func viewDidLoad() {
         
@@ -55,6 +55,19 @@ class DiagramViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
     }
     
+    @IBAction func showMenu(_ sender: UIBarButtonItem) {
+        
+        if containerConstant.constant == 0 {
+            containerConstant.constant -= 200
+        } else {
+            containerConstant.constant = 0
+        }
+    }
+}
+
+
+extension DiagramViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return incomeValues.count
@@ -75,14 +88,5 @@ class DiagramViewController: UIViewController, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(width: 20, height: collectionView.frame.height)
-    }
-    
-    @IBAction func showMenu(_ sender: UIBarButtonItem) {
-        
-        if containerConstant.constant == 0 {
-            containerConstant.constant -= 200
-        } else {
-            containerConstant.constant = 0
-        }
     }
 }

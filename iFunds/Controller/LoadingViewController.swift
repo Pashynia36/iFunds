@@ -32,21 +32,11 @@ final class LoadingViewController: UIViewController {
         })
         UIView.animate(withDuration: 1.5, animations: {
             self.countLabel.alpha = 1.0
+            self.saveLabel.alpha = 1.0
+            self.predictLabel.alpha = 1.0
         }, completion: { (finished) in
             if finished {
-                UIView.animate(withDuration: 1.5, animations: {
-                    self.saveLabel.alpha = 1.0
-                }, completion: { (finished) in
-                    if finished {
-                        UIView.animate(withDuration: 1.5, animations: {
-                            self.predictLabel.alpha = 1.0
-                        }, completion: { (finished) in
-                            if finished {
-                                self.performSegue(withIdentifier: "homeLoad", sender: self)
-                            }
-                        })
-                    }
-                })
+                self.performSegue(withIdentifier: "homeLoad", sender: self)
             }
         })
     }

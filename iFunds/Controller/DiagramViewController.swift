@@ -15,12 +15,13 @@ final class DiagramViewController: UIViewController, UICollectionViewDelegate, U
     
     private var transactions: [Transaction] = []
     private var incomeValues: [Float] = []
+    private let cellId = "barCell"
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        collectionView.register(BarCell.self, forCellWithReuseIdentifier: "barCell")
+        collectionView.register(BarCell.self, forCellWithReuseIdentifier: cellId)
         (collectionView?.collectionViewLayout as? UICollectionViewFlowLayout)?.scrollDirection = .horizontal
         collectionView.backgroundColor = .gray
     }
@@ -28,10 +29,10 @@ final class DiagramViewController: UIViewController, UICollectionViewDelegate, U
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
-        collectionView.reloadData()
         let transactionService = TransactionService()
         transactions = transactionService.getTransactions()
         fillIncomes()
+        collectionView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -44,6 +45,7 @@ final class DiagramViewController: UIViewController, UICollectionViewDelegate, U
     
     func fillIncomes() {
         
+        incomeValues = []
         for i in 0..<transactions.count {
             if transactions[i].isIncome {
                 incomeValues.append(transactions[i].amount)
@@ -67,11 +69,11 @@ final class DiagramViewController: UIViewController, UICollectionViewDelegate, U
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "barCell", for: indexPath) as? BarCell, let maximum = incomeValues.max() {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? BarCell, let maximum = incomeValues.max() {
             
             let value = incomeValues[indexPath.row]
             let ratio = CGFloat(value / maximum)
-            cell.barHeightConstraint?.constant = CGFloat(collectionView.frame.height * ratio - 50.0)
+            cell.barHeightConstraint?.constant = CGFloat(collectionView.frame.height * ratio)
             return cell
         }
         return UICollectionViewCell()

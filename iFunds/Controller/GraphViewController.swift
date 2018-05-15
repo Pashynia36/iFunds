@@ -41,7 +41,6 @@ final class GraphViewController: UIViewController {
     func fillTransactions() {
         
         for i in 0..<transactions.count {
-            
             if transactions[i].isIncome {
                 graphView.graphPoints.append(Int(transactions[i].amount))
             } else {

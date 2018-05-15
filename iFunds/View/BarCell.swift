@@ -16,7 +16,7 @@ final class BarCell: UICollectionViewCell {
         let view = UIView()
         view.backgroundColor = .green
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.cornerRadius = 3.0
+        view.layer.cornerRadius = 5.0
         return view
     }()
     

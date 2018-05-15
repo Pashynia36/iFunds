@@ -19,7 +19,8 @@ final class ProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
-        getTransactions()
+        let transactionService = TransactionService()
+        transactions = transactionService.getTransactions()
         calculate()
     }
     
@@ -42,16 +43,5 @@ final class ProfileViewController: UIViewController {
         totalSpent.text = "Total spent: " + String(outcome)
         totalEarned.text = "Total earned: " + String(income)
         clearProfit.text = "Clear profit: " + String(income + outcome)
-    }
-    
-    func getTransactions() {
-        
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        let managedContext = appDelegate.persistentContainer.viewContext
-        do {
-            transactions = try managedContext.fetch(Transaction.fetchRequest())
-        } catch {
-            print("Fetching Failed")
-        }
     }
 }

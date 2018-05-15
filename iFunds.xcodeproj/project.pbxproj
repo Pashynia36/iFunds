@@ -21,6 +21,7 @@
 		4E0ACFFD20A490B60010B197 /* TransactionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0ACFFC20A490B60010B197 /* TransactionsTableViewCell.swift */; };
 		4E0C137620A97C2A00495AA7 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C137520A97C2A00495AA7 /* GraphView.swift */; };
 		4E0C139C20A9D58A00495AA7 /* BarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C139B20A9D58A00495AA7 /* BarCell.swift */; };
+		4E0CB58520AAF9CA00393EEC /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0CB58420AAF9CA00393EEC /* TransactionService.swift */; };
 		4ECA773B20A5D45000F19DC7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECA773A20A5D45000F19DC7 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		4E0ACFFC20A490B60010B197 /* TransactionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransactionsTableViewCell.swift; path = iFunds/View/TransactionsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		4E0C137520A97C2A00495AA7 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		4E0C139B20A9D58A00495AA7 /* BarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCell.swift; sourceTree = "<group>"; };
+		4E0CB58420AAF9CA00393EEC /* TransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
 		4ECA773A20A5D45000F19DC7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 				4E0ACFE520A47D6B0010B197 /* Info.plist */,
 				4E0ACFEB20A47DA20010B197 /* Supporting Files */,
 				4E0ACFDD20A47D680010B197 /* iFunds.xcdatamodeld */,
+				4E0CB58420AAF9CA00393EEC /* TransactionService.swift */,
 			);
 			path = iFunds;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				4E0ACFED20A47F520010B197 /* LoadingViewController.swift in Sources */,
 				4E0ACFF920A4869F0010B197 /* AddTransactionViewController.swift in Sources */,
 				4E0ACFF320A486430010B197 /* MoneyViewController.swift in Sources */,
+				4E0CB58520AAF9CA00393EEC /* TransactionService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

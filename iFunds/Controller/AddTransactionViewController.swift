@@ -28,9 +28,8 @@ final class AddTransactionViewController: UIViewController {
     func save(isIncome: Bool, purpose: String, description: String, amount: Float, photo: String) {
         
         let date = Date()
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         // Taking managedContext
-        let managedContext = appDelegate.persistentContainer.viewContext
+        let managedContext = AppDelegate.viewContext
         // Creating new managed Object
         let entity = NSEntityDescription.entity(forEntityName: "Transaction", in: managedContext)!
         let object = NSManagedObject(entity: entity, insertInto: managedContext)

@@ -24,7 +24,8 @@ final class GraphViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
-        getTransactions()
+        let transactionService = TransactionService()
+        transactions = transactionService.getTransactions()
         fillTransactions()
         graphView.setNeedsDisplay()
     }
@@ -34,17 +35,6 @@ final class GraphViewController: UIViewController {
         super.viewWillDisappear(animated)
         if containerConstant.constant == 0 {
             containerConstant.constant -= 200
-        }
-    }
-
-    func getTransactions() {
-        
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        let managedContext = appDelegate.persistentContainer.viewContext
-        do {
-            transactions = try managedContext.fetch(Transaction.fetchRequest())
-        } catch {
-            print("Fetching Failed")
         }
     }
     

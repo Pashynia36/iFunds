@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DiagramViewController: UIViewController {
+final class DiagramViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet private weak var containerConstant: NSLayoutConstraint!
     @IBOutlet private weak var collectionView: UICollectionView!
@@ -19,7 +19,7 @@ final class DiagramViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        getTransactions()
+        
         collectionView.register(BarCell.self, forCellWithReuseIdentifier: "barCell")
         (collectionView?.collectionViewLayout as? UICollectionViewFlowLayout)?.scrollDirection = .horizontal
         collectionView.backgroundColor = .gray
@@ -29,6 +29,9 @@ final class DiagramViewController: UIViewController {
         
         super.viewWillAppear(animated)
         collectionView.reloadData()
+        let transactionService = TransactionService()
+        transactions = transactionService.getTransactions()
+        fillIncomes()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -39,15 +42,8 @@ final class DiagramViewController: UIViewController {
         }
     }
     
-    func getTransactions() {
+    func fillIncomes() {
         
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        let managedContext = appDelegate.persistentContainer.viewContext
-        do {
-            transactions = try managedContext.fetch(Transaction.fetchRequest())
-        } catch {
-            print("Fetching Failed")
-        }
         for i in 0..<transactions.count {
             if transactions[i].isIncome {
                 incomeValues.append(transactions[i].amount)
@@ -63,10 +59,6 @@ final class DiagramViewController: UIViewController {
             containerConstant.constant = 0
         }
     }
-}
-
-
-extension DiagramViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         

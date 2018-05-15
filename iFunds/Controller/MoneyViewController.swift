@@ -15,8 +15,6 @@ class MoneyViewController: UIViewController {
     @IBOutlet weak var containerConstant: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     
-    
-    
     var transactions: [Transaction] = []
     
     override func viewWillAppear(_ animated: Bool) {

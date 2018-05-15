@@ -20,6 +20,7 @@ class TransactionsTableViewCell: UITableViewCell {
         
         purposeInTheCell.text = transaction.purpose
         amountInTheCell.text = String(transaction.amount)
+        // FIXME: - Find another solution
         if transaction.photo != "" {
             let asset = PHAsset.fetchAssets(withLocalIdentifiers: [transaction.photo!], options: nil)
             PHImageManager.default().requestImage(
@@ -31,11 +32,15 @@ class TransactionsTableViewCell: UITableViewCell {
             }
         } else if transaction.isIncome {
             imageInTheCell.image = nil
-            imageInTheCell.backgroundColor = UIColor.green
         } else {
             imageInTheCell.image = nil
-            imageInTheCell.backgroundColor = UIColor.red
+        }
+        if transaction.isIncome {
+            imageInTheCell.layer.borderColor = UIColor.green.cgColor
+        } else {
+            imageInTheCell.layer.borderColor = UIColor.red.cgColor
         }
         imageInTheCell.layer.cornerRadius = 25.0
+        imageInTheCell.layer.borderWidth = 2.0
     }
 }

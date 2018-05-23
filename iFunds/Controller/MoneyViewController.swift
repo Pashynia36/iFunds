@@ -12,6 +12,7 @@ import CoreData
 
 final class MoneyViewController: UIViewController {
     
+    @IBOutlet weak var backgroundColor: UIScrollView!
     @IBOutlet private weak var containerConstant: NSLayoutConstraint!
     @IBOutlet private weak var tableView: UITableView!
     
@@ -22,6 +23,7 @@ final class MoneyViewController: UIViewController {
         super.viewWillAppear(animated)
         let transactionService = TransactionService()
         transactions = transactionService.getTransactions()
+        drawBackground()
         tableView.reloadData()
     }
     
@@ -36,6 +38,39 @@ final class MoneyViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+    }
+    
+    func drawBackground() {
+        
+        backgroundColor.frame.size.width = view.frame.width
+        backgroundColor.frame.size.height = view.frame.height * 2
+        let values: (Float, Float) = getThemValues()
+        backgroundColor.frame.origin.y = -view.frame.height/2
+        let gradient = CAGradientLayer()
+        let colorOne = UIColor(red: 90.0 / 255.0, green: 207.0 / 255.0, blue: 65.0 / 255.0, alpha: 1.0).cgColor
+        let colorTwo = UIColor(red: 255.0 / 255.0, green: 207.0 / 255.0, blue: 65.0 / 255.0, alpha: 1.0).cgColor
+        let colorThree = UIColor(red: 255.0 / 255.0, green: 84.0 / 255.0, blue: 65.0 / 255.0, alpha: 1.0).cgColor
+        gradient.colors = [colorThree, colorTwo, colorOne]
+        gradient.locations = [0.0, 0.5, 1.0]
+        gradient.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.width, height: self.view.frame.height * 2)
+        self.backgroundColor.layer.insertSublayer(gradient, at: 0)
+    }
+    
+    func getThemValues() -> (Float, Float) {
+        
+        var max: Float = 0.0
+        var summary: Float = 0.0
+        for i in 0..<transactions.count {
+            if transactions[i].isIncome {
+                summary += transactions[i].amount
+            } else {
+                summary -= transactions[i].amount
+            }
+            if transactions[i].amount > max {
+                max = transactions[i].amount
+            }
+        }
+        return (max, summary)
     }
     
     @IBAction func showMenu(_ sender: UIBarButtonItem) {

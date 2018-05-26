@@ -38,6 +38,14 @@ final class MoneyViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.backgroundColor = .clear
+        self.navigationController?.navigationBar.alpha = 1
+//        self.tabBarController?.tabBar.shadowImage = UIImage()
+//        self.tabBarController?.tabBar.isTranslucent = true
+//        self.tabBarController?.tabBar.backgroundColor = .clear
     }
     
     func drawBackground() {

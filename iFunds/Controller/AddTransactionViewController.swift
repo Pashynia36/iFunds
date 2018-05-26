@@ -23,6 +23,10 @@ final class AddTransactionViewController: UIViewController {
         
         super.viewDidLoad()
         _ = PHAsset.fetchAssets(with: nil)
+        purposeField.delegate = self
+        descriptionField.delegate = self
+        amountField.delegate = self
+//        amountField.keyboardType = UIKeyboardType.
     }
     
     func save(isIncome: Bool, purpose: String, description: String, amount: Float, photo: String) {
@@ -47,6 +51,8 @@ final class AddTransactionViewController: UIViewController {
             print("Couldn't save. \(error), \(error.userInfo)")
         }
     }
+    
+    
     
     @IBAction func photoButton(_ sender: Any) {
         
@@ -73,11 +79,28 @@ final class AddTransactionViewController: UIViewController {
             let amount = Float(amountField.text!)!
             save(isIncome: isIncome, purpose: purpose, description: description, amount: amount, photo: photo)
             navigationController?.popViewController(animated: true)
+        } else {
+            purposeField.layer.backgroundColor = UIColor.red.cgColor
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self.purposeField.layer.backgroundColor = UIColor.white.cgColor
+            }
+            let animation = CAKeyframeAnimation()
+            
+            animation.keyPath = "position.x"
+            
+            animation.values = [0, 10, -10, 10, -5, 5, -5, 0 ]
+            
+            animation.keyTimes = [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1]
+            animation.duration = 0.4
+            
+            animation.isAdditive = true
+            
+            purposeField.layer.add(animation, forKey: "shake")
         }
     }
 }
 
-extension AddTransactionViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
+extension AddTransactionViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     // Did finish picking
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -92,5 +115,12 @@ extension AddTransactionViewController: UIImagePickerControllerDelegate, UINavig
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         
         picker.dismiss(animated: true, completion: nil)
+    }
+    
+    // Should close keyboard after pressing 'Done'
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        return true
     }
 }

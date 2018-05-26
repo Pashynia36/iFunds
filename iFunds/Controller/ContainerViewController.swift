@@ -13,6 +13,7 @@ final class ContainerViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
+        view.backgroundColor = .clear
     }
     
     @IBAction func homePage(_ sender: UIButton) {

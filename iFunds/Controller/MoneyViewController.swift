@@ -53,7 +53,7 @@ final class MoneyViewController: UIViewController {
         backgroundColor.frame.size.width = view.frame.width
         backgroundColor.frame.size.height = view.frame.height * 2
         let values: (Float, Float) = getThemValues()
-        backgroundColor.frame.origin.y = -view.frame.height/2
+        backgroundColor.frame.origin.y = -100
         let gradient = CAGradientLayer()
         let colorOne = UIColor(red: 90.0 / 255.0, green: 207.0 / 255.0, blue: 65.0 / 255.0, alpha: 1.0).cgColor
         let colorTwo = UIColor(red: 255.0 / 255.0, green: 207.0 / 255.0, blue: 65.0 / 255.0, alpha: 1.0).cgColor

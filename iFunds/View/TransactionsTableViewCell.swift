@@ -31,9 +31,9 @@ final class TransactionsTableViewCell: UITableViewCell {
                     self.imageInTheCell.image = image
             }
         } else if transaction.isIncome {
-            imageInTheCell.image = nil
+            imageInTheCell.image = #imageLiteral(resourceName: "down")
         } else {
-            imageInTheCell.image = nil
+            imageInTheCell.image = #imageLiteral(resourceName: "up")
         }
         if transaction.isIncome {
             imageInTheCell.layer.borderColor = UIColor.green.cgColor

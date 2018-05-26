@@ -28,7 +28,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XcQ-c6-xDb">
-                                <rect key="frame" x="52" y="270" width="216" height="29"/>
+                                <rect key="frame" x="52" y="269.5" width="216" height="29"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YL0-un-26h">
                                         <rect key="frame" x="0.0" y="0.0" width="70.5" height="29"/>
@@ -92,11 +92,11 @@
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3dM-U7-v9D" customClass="GraphView" customModule="iFunds" customModuleProvider="target">
-                                <rect key="frame" x="35" y="134.5" width="250" height="250"/>
+                                <rect key="frame" x="0.0" y="99.5" width="320" height="320"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="9Hv-nW-laQ"/>
-                                    <constraint firstAttribute="height" constant="250" id="EqM-xx-DLV"/>
+                                    <constraint firstAttribute="height" constant="320" id="SCL-aO-y2a"/>
+                                    <constraint firstAttribute="width" constant="320" id="tDP-RF-04y"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -240,7 +240,7 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="transactionCell" rowHeight="69" id="Gcz-vD-gIn" customClass="TransactionsTableViewCell" customModule="iFunds" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="transactionCell" rowHeight="69" id="Gcz-vD-gIn" customClass="TransactionsTableViewCell" customModule="iFunds" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gcz-vD-gIn" id="8AL-Ww-sKY">
@@ -341,7 +341,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IEn-i7-ltv">
-                                <rect key="frame" x="100" y="80" width="121" height="29"/>
+                                <rect key="frame" x="99.5" y="80" width="121" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="121" id="lKf-28-g64"/>
                                 </constraints>
@@ -447,6 +447,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="Aa2-7T-xgg" kind="relationship" relationship="viewControllers" id="ueV-p0-YiL"/>
@@ -503,18 +504,34 @@
                                 </subviews>
                                 <color key="tintColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MqS-tM-FCX">
+                                <rect key="frame" x="199" y="0.0" width="1" height="455"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ti-c5-UAp">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="1"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="2Ti-c5-UAp" firstAttribute="leading" secondItem="ZLg-fI-zzE" secondAttribute="leading" id="1tH-Mc-a3x"/>
+                            <constraint firstItem="MqS-tM-FCX" firstAttribute="top" secondItem="ZLg-fI-zzE" secondAttribute="top" id="4vX-fQ-3to"/>
+                            <constraint firstItem="RKC-LK-Pe5" firstAttribute="top" secondItem="2Ti-c5-UAp" secondAttribute="bottom" constant="64" id="6Yk-aV-00U"/>
+                            <constraint firstItem="2Ti-c5-UAp" firstAttribute="top" secondItem="6aW-8B-nT3" secondAttribute="top" id="DtH-bM-XCf"/>
                             <constraint firstItem="RKC-LK-Pe5" firstAttribute="centerX" secondItem="ZLg-fI-zzE" secondAttribute="centerX" id="FLq-W5-XRM"/>
+                            <constraint firstAttribute="trailing" secondItem="2Ti-c5-UAp" secondAttribute="trailing" id="HcA-bF-LAI"/>
                             <constraint firstItem="RKC-LK-Pe5" firstAttribute="centerY" secondItem="ZLg-fI-zzE" secondAttribute="centerY" id="Qd7-iX-ZEF"/>
+                            <constraint firstItem="MqS-tM-FCX" firstAttribute="leading" secondItem="RKC-LK-Pe5" secondAttribute="trailing" constant="46.5" id="Qgq-XY-bwu"/>
+                            <constraint firstAttribute="bottom" secondItem="MqS-tM-FCX" secondAttribute="bottom" id="WRY-KV-v1T"/>
+                            <constraint firstItem="MqS-tM-FCX" firstAttribute="trailing" secondItem="6aW-8B-nT3" secondAttribute="trailing" id="y0g-hB-2DX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6aW-8B-nT3"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Udq-gq-JC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3953" y="-89"/>
+            <point key="canvasLocation" x="3952.5" y="-89.260563380281695"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="gfK-3B-zJi">
@@ -571,7 +588,9 @@
         <scene sceneID="XP6-jG-EOp">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Aa2-7T-xgg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Money" id="VBq-V8-QpK"/>
+                    <tabBarItem key="tabBarItem" title="Money" image="dollar" id="VBq-V8-QpK">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GhK-Y6-wOi">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
@@ -590,7 +609,9 @@
         <scene sceneID="hRM-IT-dut">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uHZ-1c-mqR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Graph" id="jWu-6f-yyA"/>
+                    <tabBarItem key="tabBarItem" title="Graph" image="graph" id="jWu-6f-yyA">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dH4-Nu-7ZS">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
@@ -609,7 +630,9 @@
         <scene sceneID="wbN-rc-KIw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nsj-dq-ckw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Diagram" id="YIc-7a-J2J"/>
+                    <tabBarItem key="tabBarItem" title="Diagram" image="bars" id="YIc-7a-J2J">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="clu-Co-gGH">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
@@ -625,6 +648,11 @@
             <point key="canvasLocation" x="1927.5" y="671.83098591549299"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bars" width="25" height="25"/>
+        <image name="dollar" width="25" height="25"/>
+        <image name="graph" width="25" height="25"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="e7w-1Z-4Fy"/>
     </inferredMetricsTieBreakers>

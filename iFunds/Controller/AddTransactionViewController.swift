@@ -22,11 +22,29 @@ final class AddTransactionViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        setBackground()
         _ = PHAsset.fetchAssets(with: nil)
         purposeField.delegate = self
         descriptionField.delegate = self
         amountField.delegate = self
-//        amountField.keyboardType = UIKeyboardType.
+    }
+    
+    func setBackground() {
+        
+       self.navigationController?.navigationBar.tintColor = .black
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.backgroundColor = .clear
+        self.navigationController?.navigationBar.alpha = 1
+        let gradient = CAGradientLayer()
+        let colorOne = UIColor(red: 90.0 / 255.0, green: 207.0 / 255.0, blue: 65.0 / 255.0, alpha: 1.0).cgColor
+        let colorTwo = UIColor(red: 255.0 / 255.0, green: 207.0 / 255.0, blue: 65.0 / 255.0, alpha: 1.0).cgColor
+        let colorThree = UIColor(red: 255.0 / 255.0, green: 84.0 / 255.0, blue: 65.0 / 255.0, alpha: 1.0).cgColor
+        gradient.colors = [colorThree, colorTwo, colorOne]
+        gradient.locations = [0.0, 0.5, 1.0]
+        gradient.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.width, height: self.view.frame.height * 2)
+        view.layer.insertSublayer(gradient, at: 0)
     }
     
     func save(isIncome: Bool, purpose: String, description: String, amount: Float, photo: String) {

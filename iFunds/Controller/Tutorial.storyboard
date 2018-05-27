@@ -55,7 +55,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0k-Lq-FIs">
-                                                    <rect key="frame" x="60" y="429.5" width="251" height="42"/>
+                                                    <rect key="frame" x="60" y="361" width="251" height="110.5"/>
                                                     <string key="text">Приложение поможет 
 одеться по погоде</string>
                                                     <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="18"/>
@@ -71,6 +71,7 @@
                                             </subviews>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="h0k-Lq-FIs" firstAttribute="top" secondItem="dqf-Ox-dzQ" secondAttribute="bottom" constant="16" id="0Wk-r6-e1o"/>
                                             <constraint firstAttribute="bottom" secondItem="h0k-Lq-FIs" secondAttribute="bottom" id="5ir-JN-CW5"/>
                                             <constraint firstItem="h0k-Lq-FIs" firstAttribute="centerX" secondItem="mRe-4E-jg9" secondAttribute="centerX" id="HVm-Rw-tUg"/>
                                             <constraint firstItem="dqf-Ox-dzQ" firstAttribute="leading" secondItem="mRe-4E-jg9" secondAttribute="leadingMargin" constant="30" id="b7O-Nk-6VE"/>

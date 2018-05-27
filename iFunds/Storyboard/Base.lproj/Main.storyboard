@@ -651,7 +651,7 @@
                         <outlet property="iFundsLabel" destination="e8e-IO-JqR" id="1EG-ei-zsN"/>
                         <outlet property="predictLabel" destination="Gah-WI-JWD" id="JKq-j2-3Bm"/>
                         <outlet property="saveLabel" destination="i1e-6L-f6l" id="tXc-Ht-dqS"/>
-                        <segue destination="TfI-xF-dmt" kind="showDetail" identifier="homeLoad" id="Ktg-Uq-aiU"/>
+                        <segue destination="TfI-xF-dmt" kind="showDetail" identifier="homeLoad" animates="NO" id="Ktg-Uq-aiU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4t4-ft-ld9" userLabel="First Responder" sceneMemberID="firstResponder"/>

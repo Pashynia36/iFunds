@@ -18,6 +18,7 @@ final class LoadingViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
+        setBackground()
         self.iFundsLabel.center.y += self.view.bounds.height
         self.countLabel.alpha = 0.0
         self.saveLabel.alpha = 0.0
@@ -39,5 +40,17 @@ final class LoadingViewController: UIViewController {
                 self.performSegue(withIdentifier: "homeLoad", sender: self)
             }
         })
+    }
+    
+    func setBackground() {
+        
+        let gradient = CAGradientLayer()
+        let colorOne = UIColor(red: 90.0 / 255.0, green: 207.0 / 255.0, blue: 65.0 / 255.0, alpha: 1.0).cgColor
+        let colorTwo = UIColor(red: 255.0 / 255.0, green: 207.0 / 255.0, blue: 65.0 / 255.0, alpha: 1.0).cgColor
+        let colorThree = UIColor(red: 255.0 / 255.0, green: 84.0 / 255.0, blue: 65.0 / 255.0, alpha: 1.0).cgColor
+        gradient.colors = [colorThree, colorTwo, colorOne]
+        gradient.locations = [0.0, 0.5, 1.0]
+        gradient.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.width, height: self.view.frame.height * 2)
+        view.layer.insertSublayer(gradient, at: 0)
     }
 }

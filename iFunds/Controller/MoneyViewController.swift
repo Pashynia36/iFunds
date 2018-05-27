@@ -12,6 +12,12 @@ import CoreData
 
 final class MoneyViewController: UIViewController {
     
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var purposeLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var detailedView: UIView!
+    
     @IBOutlet weak var backgroundColor: UIScrollView!
     @IBOutlet private weak var containerConstant: NSLayoutConstraint!
     @IBOutlet private weak var tableView: UITableView!
@@ -24,6 +30,7 @@ final class MoneyViewController: UIViewController {
         let transactionService = TransactionService()
         transactions = transactionService.getTransactions()
         drawBackground()
+        tableView.delegate = self
         tableView.reloadData()
     }
     
@@ -38,14 +45,13 @@ final class MoneyViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+       detailedView.isHidden = true
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.backgroundColor = .clear
         self.navigationController?.navigationBar.alpha = 1
-//        self.tabBarController?.tabBar.shadowImage = UIImage()
-//        self.tabBarController?.tabBar.isTranslucent = true
-//        self.tabBarController?.tabBar.backgroundColor = .clear
     }
     
     func drawBackground() {
@@ -81,6 +87,35 @@ final class MoneyViewController: UIViewController {
         return (max, summary)
     }
     
+    func presentView(indexPath: Int) {
+        
+        purposeLabel.text = transactions[indexPath].purpose
+        descriptionLabel.text = transactions[indexPath].descr
+        amountLabel.text = String(transactions[indexPath].amount)
+        if transactions[indexPath].photo != "" {
+            let asset = PHAsset.fetchAssets(withLocalIdentifiers: [transactions[indexPath].photo!], options: nil)
+            PHImageManager.default().requestImage(
+                for: asset[0],
+                targetSize: imageView.frame.size,
+                contentMode: .aspectFill,
+                options: nil) { (image, _) -> Void in
+                    self.imageView.image = image
+            }
+        } else if transactions[indexPath].isIncome {
+            imageView.image = nil
+        } else {
+            imageView.image = nil
+        }
+        if transactions[indexPath].isIncome {
+            imageView.layer.borderColor = UIColor.green.cgColor
+        } else {
+            imageView.layer.borderColor = UIColor.red.cgColor
+        }
+        imageView.layer.cornerRadius = 50.0
+        imageView.layer.borderWidth = 2.0
+        detailedView.isHidden = false
+    }
+    
     @IBAction func showMenu(_ sender: UIBarButtonItem) {
         
         if containerConstant.constant == 0 {
@@ -90,9 +125,14 @@ final class MoneyViewController: UIViewController {
         }
         tableView.setNeedsDisplay()
     }
+    
+    @IBAction func closeDetail(_ sender: UIButton) {
+        
+        detailedView.isHidden = true
+    }
 }
 
-extension MoneyViewController: UITableViewDataSource {
+extension MoneyViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -118,5 +158,11 @@ extension MoneyViewController: UITableViewDataSource {
             transactions = transactionService.getTransactions()
         }
         tableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        presentView(indexPath: indexPath.row)
     }
 }

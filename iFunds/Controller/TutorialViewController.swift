@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreLocation
 
 final class TutorialViewController: UIViewController {
     

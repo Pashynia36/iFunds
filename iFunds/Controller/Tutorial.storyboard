@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VtE-mI-zVc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Light.ttf">
+            <string>Montserrat-Light</string>
+        </array>
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
+        </array>
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Tutorial View Controller-->
+        <scene sceneID="MXn-ky-fw4">
+            <objects>
+                <viewController storyboardIdentifier="TutorialVC" id="VtE-mI-zVc" customClass="TutorialViewController" customModule="iFunds" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aU2-cN-89n">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="OjI-mM-Qbm">
+                                <rect key="frame" x="168" y="630" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" name="orange"/>
+                            </pageControl>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1V1-Tl-mZh">
+                                <rect key="frame" x="0.0" y="40" width="375" height="487.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Q1W-ky-VAD">
+                                    <size key="itemSize" width="371" height="471.5"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TutorialCell" id="mRe-4E-jg9" customClass="TutorialCell" customModule="iFunds" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="8" width="371" height="471.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="371" height="471.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0k-Lq-FIs">
+                                                    <rect key="frame" x="60" y="429.5" width="251" height="42"/>
+                                                    <string key="text">Приложение поможет 
+одеться по погоде</string>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="18"/>
+                                                    <color key="textColor" red="0.2156862745" green="0.027450980390000001" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boots" translatesAutoresizingMaskIntoConstraints="NO" id="dqf-Ox-dzQ">
+                                                    <rect key="frame" x="38" y="50" width="295" height="295"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="dqf-Ox-dzQ" secondAttribute="height" multiplier="1:1" id="11b-he-gKO"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="h0k-Lq-FIs" secondAttribute="bottom" id="5ir-JN-CW5"/>
+                                            <constraint firstItem="h0k-Lq-FIs" firstAttribute="centerX" secondItem="mRe-4E-jg9" secondAttribute="centerX" id="HVm-Rw-tUg"/>
+                                            <constraint firstItem="dqf-Ox-dzQ" firstAttribute="leading" secondItem="mRe-4E-jg9" secondAttribute="leadingMargin" constant="30" id="b7O-Nk-6VE"/>
+                                            <constraint firstItem="dqf-Ox-dzQ" firstAttribute="centerX" secondItem="mRe-4E-jg9" secondAttribute="centerX" id="elx-ba-zUl"/>
+                                            <constraint firstAttribute="trailing" secondItem="h0k-Lq-FIs" secondAttribute="trailing" constant="60" id="f74-BV-3L3"/>
+                                            <constraint firstItem="dqf-Ox-dzQ" firstAttribute="top" secondItem="mRe-4E-jg9" secondAttribute="top" constant="50" id="xGI-H9-xJ6"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="dqf-Ox-dzQ" id="nTp-69-bao"/>
+                                            <outlet property="titleView" destination="h0k-Lq-FIs" id="ycP-g8-F8h"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="VtE-mI-zVc" id="pOJ-jo-TO8"/>
+                                    <outlet property="delegate" destination="VtE-mI-zVc" id="FPz-Pt-d8T"/>
+                                </connections>
+                            </collectionView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ors-yJ-qfa">
+                                <rect key="frame" x="172.5" y="600" width="30" height="30"/>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="15"/>
+                                <state key="normal" title="Skip">
+                                    <color key="titleColor" red="0.83529411760000005" green="0.78039215689999997" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" red="0.72549019609999998" green="0.63137254899999995" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uny-U0-eSO" customClass="GradientButton" customModule="wezze" customModuleProvider="target">
+                                <rect key="frame" x="60" y="547.5" width="255" height="42.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Uny-U0-eSO" secondAttribute="height" multiplier="6:1" id="2vI-Fs-MbP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="19"/>
+                                <state key="normal" title="Agree">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="0.92549019610000005" green="0.65490196079999996" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="0.83529411760000005" green="0.33333333329999998" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="VtE-mI-zVc" eventType="touchUpInside" id="ILY-0h-Zi0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98431372549999996" green="0.94509803920000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1V1-Tl-mZh" firstAttribute="trailing" secondItem="JSB-C2-QMT" secondAttribute="trailing" id="2ht-Nr-r8g"/>
+                            <constraint firstItem="OjI-mM-Qbm" firstAttribute="bottom" secondItem="JSB-C2-QMT" secondAttribute="bottom" id="3wO-ZC-YbK"/>
+                            <constraint firstItem="JSB-C2-QMT" firstAttribute="trailing" secondItem="Uny-U0-eSO" secondAttribute="trailing" constant="60" id="8DQ-HL-dkq"/>
+                            <constraint firstItem="Ors-yJ-qfa" firstAttribute="top" secondItem="Uny-U0-eSO" secondAttribute="bottom" constant="10" id="9nt-Mq-fcj"/>
+                            <constraint firstItem="OjI-mM-Qbm" firstAttribute="centerX" secondItem="aU2-cN-89n" secondAttribute="centerX" id="Hmq-TC-I8G"/>
+                            <constraint firstItem="Uny-U0-eSO" firstAttribute="centerX" secondItem="aU2-cN-89n" secondAttribute="centerX" id="ZtS-Og-ch9"/>
+                            <constraint firstItem="1V1-Tl-mZh" firstAttribute="top" secondItem="JSB-C2-QMT" secondAttribute="top" constant="20" id="eX7-U2-HCl"/>
+                            <constraint firstItem="OjI-mM-Qbm" firstAttribute="top" secondItem="Ors-yJ-qfa" secondAttribute="bottom" id="gQJ-ES-H8f"/>
+                            <constraint firstItem="Uny-U0-eSO" firstAttribute="top" secondItem="1V1-Tl-mZh" secondAttribute="bottom" constant="20" id="oVb-G8-76T"/>
+                            <constraint firstItem="Ors-yJ-qfa" firstAttribute="centerX" secondItem="aU2-cN-89n" secondAttribute="centerX" id="pZK-Gf-XeS"/>
+                            <constraint firstItem="1V1-Tl-mZh" firstAttribute="leading" secondItem="JSB-C2-QMT" secondAttribute="leading" id="sYD-fE-rAZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JSB-C2-QMT"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bTT-jf-94n"/>
+                    <connections>
+                        <outlet property="buttonView" destination="Uny-U0-eSO" id="m6N-5m-R2w"/>
+                        <outlet property="collectionView" destination="1V1-Tl-mZh" id="QT3-Tc-lkS"/>
+                        <outlet property="pageControl" destination="OjI-mM-Qbm" id="SFV-ex-t9o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jeh-8y-1Rq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="728.79999999999995" y="83.208395802098963"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="boots" width="16" height="16"/>
+        <namedColor name="orange">
+            <color red="0.92500001190000003" green="0.65499997139999999" blue="0.44699999689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

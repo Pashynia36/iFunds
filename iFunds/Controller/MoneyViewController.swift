@@ -85,10 +85,8 @@ final class MoneyViewController: UIViewController {
         
         if containerConstant.constant == 0 {
             containerConstant.constant -= 200
-            tableView.alpha = 1.0
         } else {
             containerConstant.constant = 0
-            tableView.alpha = 0.5
         }
         tableView.setNeedsDisplay()
     }

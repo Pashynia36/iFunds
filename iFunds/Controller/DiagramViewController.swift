@@ -15,6 +15,7 @@ final class DiagramViewController: UIViewController, UICollectionViewDelegate, U
     
     private var transactions: [Transaction] = []
     private var incomeValues: [Float] = []
+    private var incomePurposes: [String] = []
     private let cellId = "barCell"
     
     override func viewDidLoad() {
@@ -50,6 +51,7 @@ final class DiagramViewController: UIViewController, UICollectionViewDelegate, U
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.backgroundColor = .clear
         self.navigationController?.navigationBar.alpha = 1
+        self.navigationController?.navigationBar.topItem?.title = "Income Diagram"
         let gradient = CAGradientLayer()
         let colorOne = UIColor(red: 90.0 / 255.0, green: 207.0 / 255.0, blue: 65.0 / 255.0, alpha: 1.0).cgColor
         let colorTwo = UIColor(red: 255.0 / 255.0, green: 207.0 / 255.0, blue: 65.0 / 255.0, alpha: 1.0).cgColor
@@ -66,6 +68,7 @@ final class DiagramViewController: UIViewController, UICollectionViewDelegate, U
         for i in 0..<transactions.count {
             if transactions[i].isIncome {
                 incomeValues.append(transactions[i].amount)
+                incomePurposes.append(transactions[i].purpose!)
             }
         }
     }
@@ -85,6 +88,21 @@ final class DiagramViewController: UIViewController, UICollectionViewDelegate, U
             return cell
         }
         return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let alert = UIAlertController(title: "\(incomePurposes[indexPath.row])", message: "\(incomeValues[indexPath.row])", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                break
+            case .cancel:
+                break
+            case .destructive:
+                break
+            }}))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

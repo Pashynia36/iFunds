@@ -31,7 +31,7 @@ final class GraphViewController: UIViewController {
         fillTransactions()
         graphView.setNeedsDisplay()
         let max = maximum()
-        graphMaxLabel.text = "Max: \(max)"
+        graphMaxLabel.text = "\(max)₴"
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -71,17 +71,18 @@ final class GraphViewController: UIViewController {
     }
     
     func fillTransactions() {
-        
-        if transactions[0].isIncome {
-            graphView.graphPoints[0] = Int(transactions[0].amount)
-        } else {
-            graphView.graphPoints[0] = Int(-transactions[0].amount)
-        }
-        for i in 1..<transactions.count {
-            if transactions[i].isIncome {
-                graphView.graphPoints[i] = graphView.graphPoints[i-1] + Int(transactions[i].amount)
+        if transactions.count > 6 {
+            if transactions[0].isIncome {
+                graphView.graphPoints[0] = Int(transactions[0].amount)
             } else {
-                graphView.graphPoints[i] = graphView.graphPoints[i-1] - Int(transactions[i].amount)
+                graphView.graphPoints[0] = Int(-transactions[0].amount)
+            }
+            for i in 1..<transactions.count {
+                if transactions[i].isIncome {
+                    graphView.graphPoints[i] = graphView.graphPoints[i-1] + Int(transactions[i].amount)
+                } else {
+                    graphView.graphPoints[i] = graphView.graphPoints[i-1] - Int(transactions[i].amount)
+                }
             }
         }
     }

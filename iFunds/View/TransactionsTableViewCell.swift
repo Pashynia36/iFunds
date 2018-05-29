@@ -19,7 +19,7 @@ final class TransactionsTableViewCell: UITableViewCell {
     func prepareCellFor(transaction: Transaction) {
         
         purposeInTheCell.text = transaction.purpose
-        amountInTheCell.text = String(transaction.amount)
+        amountInTheCell.text = String(transaction.amount) + "₴"
         // FIXME: - Find another solution
         if transaction.photo != "" {
             let asset = PHAsset.fetchAssets(withLocalIdentifiers: [transaction.photo!], options: nil)

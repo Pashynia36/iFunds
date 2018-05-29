@@ -52,6 +52,7 @@ final class MoneyViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.backgroundColor = .clear
         self.navigationController?.navigationBar.alpha = 1
+        self.navigationController?.navigationBar.topItem?.title = "Transactions"
     }
     
     func drawBackground() {
@@ -91,7 +92,7 @@ final class MoneyViewController: UIViewController {
         
         purposeLabel.text = transactions[indexPath].purpose
         descriptionLabel.text = transactions[indexPath].descr
-        amountLabel.text = String(transactions[indexPath].amount)
+        amountLabel.text = String(transactions[indexPath].amount) + "₴"
         if transactions[indexPath].photo != "" {
             let asset = PHAsset.fetchAssets(withLocalIdentifiers: [transactions[indexPath].photo!], options: nil)
             PHImageManager.default().requestImage(

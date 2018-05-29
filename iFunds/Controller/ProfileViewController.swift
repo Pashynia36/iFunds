@@ -58,8 +58,8 @@ final class ProfileViewController: UIViewController {
                 outcome -= transactions[i].amount
             }
         }
-        totalSpent.text = "Total spent: " + String(outcome)
-        totalEarned.text = "Total earned: " + String(income)
-        clearProfit.text = "Clear profit: " + String(income + outcome)
+        totalSpent.text = "Total spent: " + String(outcome) + "₴"
+        totalEarned.text = "Total earned: " + String(income) + "₴"
+        clearProfit.text = "Clear profit: " + String(income + outcome) + "₴"
     }
 }

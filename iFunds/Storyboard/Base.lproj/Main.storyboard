@@ -501,22 +501,38 @@
                                     <action selector="submitButton:" destination="RIs-Px-Tc1" eventType="touchUpInside" id="cXi-3n-Vup"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Income" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wH3-AK-ByN">
+                                <rect key="frame" x="24" y="84" width="57" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Outcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmc-ZB-YfH">
+                                <rect key="frame" x="239" y="84" width="71" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6tH-6V-gha" firstAttribute="centerY" secondItem="pbZ-Z5-FNE" secondAttribute="centerY" id="0bn-ka-Wsp"/>
                             <constraint firstItem="uxF-sQ-0bH" firstAttribute="bottom" secondItem="KPz-IA-gCj" secondAttribute="bottom" constant="70" id="2R1-Qc-yCs"/>
+                            <constraint firstItem="zmc-ZB-YfH" firstAttribute="top" secondItem="uxF-sQ-0bH" secondAttribute="top" constant="20" id="2Uj-cc-6He"/>
                             <constraint firstItem="uxF-sQ-0bH" firstAttribute="bottom" secondItem="qa5-90-7G8" secondAttribute="bottom" constant="16" id="5Dc-rt-BpR"/>
+                            <constraint firstItem="wH3-AK-ByN" firstAttribute="leading" secondItem="uxF-sQ-0bH" secondAttribute="leading" constant="24" id="7X0-23-R9H"/>
                             <constraint firstItem="IEn-i7-ltv" firstAttribute="top" secondItem="uxF-sQ-0bH" secondAttribute="top" constant="16" id="NaF-5Y-t4b"/>
                             <constraint firstItem="IEn-i7-ltv" firstAttribute="centerX" secondItem="pbZ-Z5-FNE" secondAttribute="centerX" id="O3N-A1-QAQ"/>
                             <constraint firstItem="uxF-sQ-0bH" firstAttribute="trailing" secondItem="KPz-IA-gCj" secondAttribute="trailing" constant="16" id="VpE-sa-cOG"/>
                             <constraint firstItem="uib-0V-F9L" firstAttribute="centerX" secondItem="pbZ-Z5-FNE" secondAttribute="centerX" id="c4Q-yg-ogL"/>
                             <constraint firstItem="fp4-KS-f6n" firstAttribute="centerX" secondItem="pbZ-Z5-FNE" secondAttribute="centerX" id="fHN-3V-RLu"/>
+                            <constraint firstItem="uxF-sQ-0bH" firstAttribute="trailing" secondItem="zmc-ZB-YfH" secondAttribute="trailing" constant="10" id="hr1-Cg-KxR"/>
                             <constraint firstItem="uib-0V-F9L" firstAttribute="top" secondItem="IEn-i7-ltv" secondAttribute="bottom" constant="80" id="lVe-ia-NvS"/>
                             <constraint firstItem="qa5-90-7G8" firstAttribute="centerX" secondItem="pbZ-Z5-FNE" secondAttribute="centerX" id="mbX-7v-Skl"/>
                             <constraint firstItem="KPz-IA-gCj" firstAttribute="leading" secondItem="uxF-sQ-0bH" secondAttribute="leading" constant="244" id="nom-Yp-gCT"/>
                             <constraint firstItem="fp4-KS-f6n" firstAttribute="top" secondItem="6tH-6V-gha" secondAttribute="bottom" constant="80" id="vgF-He-Jws"/>
                             <constraint firstItem="6tH-6V-gha" firstAttribute="centerX" secondItem="pbZ-Z5-FNE" secondAttribute="centerX" id="vnk-QC-1oY"/>
+                            <constraint firstItem="wH3-AK-ByN" firstAttribute="top" secondItem="uxF-sQ-0bH" secondAttribute="top" constant="20" id="zH7-Re-TLW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uxF-sQ-0bH"/>
                     </view>

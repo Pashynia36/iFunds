@@ -64,8 +64,9 @@ final class GraphView: UIView {
         // calculate Y point
         let topBorder = Constants.topBorder
         let bottomBorder = Constants.bottomBorder
-        let graphHeight = height - topBorder - bottomBorder
+        
         let maxValue = graphPoints.max()!
+        let graphHeight = height - topBorder - bottomBorder
         let columnYPoint = { (graphPoint: Int) -> CGFloat in
             let y = CGFloat(graphPoint) / CGFloat(maxValue) * graphHeight
             return graphHeight + topBorder - y // flip graph

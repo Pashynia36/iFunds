@@ -10,6 +10,7 @@ import UIKit
 
 final class GraphViewController: UIViewController {
     
+    @IBOutlet weak var graphMaxLabel: UILabel!
     @IBOutlet private weak var containerConstant: NSLayoutConstraint!
     
     @IBOutlet private weak var graphView: GraphView!
@@ -19,16 +20,18 @@ final class GraphViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        setBackground()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
+        setBackground()
         let transactionService = TransactionService()
         transactions = transactionService.getTransactions()
         fillTransactions()
         graphView.setNeedsDisplay()
+        let max = maximum()
+        graphMaxLabel.text = "Max: \(max)"
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -37,6 +40,17 @@ final class GraphViewController: UIViewController {
         if containerConstant.constant == 0 {
             containerConstant.constant -= 200
         }
+    }
+    
+    func maximum() -> String {
+        
+        var max: Float = 0
+        for i in 0..<transactions.count {
+            if transactions[i].amount > max {
+                max = transactions[i].amount
+            }
+        }
+        return String(max)
     }
     
     func setBackground() {
@@ -58,22 +72,17 @@ final class GraphViewController: UIViewController {
     
     func fillTransactions() {
         
-        for i in 0..<transactions.count {
-            if transactions[i].isIncome {
-                graphView.graphPoints.append(Int(transactions[i].amount))
-            } else {
-                graphView.graphPoints.append(Int(-transactions[i].amount))
-            }
-            graphView.graphPoints.remove(at: 0)
-        }
-    }
-    
-    @IBAction func showMenu(_ sender: UIBarButtonItem) {
-        
-        if containerConstant.constant == 0 {
-            containerConstant.constant -= 200
+        if transactions[0].isIncome {
+            graphView.graphPoints[0] = Int(transactions[0].amount)
         } else {
-            containerConstant.constant = 0
+            graphView.graphPoints[0] = Int(-transactions[0].amount)
+        }
+        for i in 1..<transactions.count {
+            if transactions[i].isIncome {
+                graphView.graphPoints[i] = graphView.graphPoints[i-1] + Int(transactions[i].amount)
+            } else {
+                graphView.graphPoints[i] = graphView.graphPoints[i-1] - Int(transactions[i].amount)
+            }
         }
     }
 }

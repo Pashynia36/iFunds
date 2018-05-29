@@ -70,15 +70,6 @@ final class DiagramViewController: UIViewController, UICollectionViewDelegate, U
         }
     }
     
-    @IBAction func showMenu(_ sender: UIBarButtonItem) {
-        
-        if containerConstant.constant == 0 {
-            containerConstant.constant -= 200
-        } else {
-            containerConstant.constant = 0
-        }
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return incomeValues.count

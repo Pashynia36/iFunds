@@ -45,8 +45,8 @@ final class MoneyViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-       detailedView.isHidden = true
+        tableView.separatorStyle = .none
+        detailedView.isHidden = true
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
